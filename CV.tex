@@ -1,0 +1,244 @@
+\documentclass[10pt]{article}
+\usepackage{calc}
+\reversemarginpar
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=1in,               % 1 inch margins
+            includemp]{geometry}
+\setlength{\parindent}{0in}
+\usepackage[shortlabels]{enumitem}
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newlist{bibsection}{itemize}{3}
+\setlist[bibsection]{label=,leftmargin=\bibhang,%
+        itemindent=-\bibhang,
+        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\newlist{bibenum}{enumerate}{3}
+\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
+        itemindent=-\bibhang,
+        itemsep=\bibsep,parsep=\z@,partopsep=0pt,
+        topsep=0pt}
+\let\oldendbibenum\endbibenum
+\def\endbibenum{\oldendbibenum\vspace{-.6\baselineskip}}
+\let\oldendbibsection\endbibsection
+\def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
+\makeatother
+\usepackage{fancyhdr,lastpage}
+%\pagestyle{fancy}
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+\newcommand{\makeheading}[2][]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+\renewcommand{\section}[1]{\pagebreak[3]%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+\newcommand*\fixendlist[1]{%
+    \expandafter\let\csname preFixEndListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixEndListend#1\endcsname\vspace{-0.6\baselineskip}}}
+\let\originalItem\item
+\newcommand*\fixouterlist[1]{%
+    \expandafter\let\csname preFixOuterList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\csname preFixOuterList#1\endcsname\let\oldItem\item\def\item{\pagebreak[2]\oldItem}}
+    \expandafter\let\csname preFixOuterListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\let\item\oldItem\csname preFixOuterListend#1\endcsname}}
+\newcommand*\fixinnerlist[1]{%
+    \expandafter\let\csname preFixInnerList#1\expandafter\endcsname\csname #1\endcsname
+    \expandafter\def\csname #1\endcsname{\let\oldItem\item\let\item\originalItem\csname preFixInnerList#1\endcsname}
+    \expandafter\let\csname preFixInnerListend#1\expandafter\endcsname\csname end#1\endcsname
+    \expandafter\def\csname end#1\endcsname{\csname preFixInnerListend#1\endcsname\let\item\oldItem}}
+\newlist{outerlist}{itemize}{3}
+    \setlist[outerlist]{label=\enskip\textbullet,leftmargin=*}
+    \fixendlist{outerlist}
+    \fixouterlist{outerlist}
+\newlist{lonelist}{itemize}{3}
+    \setlist[lonelist]{label=\enskip\textbullet,leftmargin=*,partopsep=0pt,topsep=0pt}
+    \fixendlist{lonelist}
+    \fixouterlist{lonelist}
+\newlist{innerlist}{itemize}{3}
+    \setlist[innerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixinnerlist{innerlist}
+\newlist{loneinnerlist}{itemize}{3}
+    \setlist[loneinnerlist]{label=\enskip\textbullet,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt}
+    \fixendlist{loneinnerlist}
+    \fixinnerlist{loneinnerlist}
+\newcommand{\blankline}{\quad\pagebreak[3]}
+\newcommand{\halfblankline}{\quad\vspace{-0.5\baselineskip}\pagebreak[3]}
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+\providecommand*\url[1]{\href{#1}{#1}}
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+\providecommand\BibTeX{{B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    \TeX}}
+\providecommand\Matlab{\textsc{Matlab}}
+\hyphenation{bio-mim-ic-ry bio-in-spi-ra-tion re-us-a-ble pro-vid-er}
+\begin{document}
+\makeheading{Dmitry Bogdanov\\}
+
+\section{Contact Information}
+
+\newlength{\rcollength}\setlength{\rcollength}{1.85in}%
+\newlength{\spacewidth}\setlength{\spacewidth}{20pt}
+\newcommand\spacechar{$|$}
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength-\spacewidth}@{}p{\spacewidth}@{}p{\rcollength}}%
+\parbox{\textwidth-\rcollength-\spacewidth}{%
+Postgraduate Student\\
+\href{http://www.ioffe.ru/index_en.html}{Ioffe Physical Technical Institute}\\
+26 Polytechnicheskaya\\
+Saint-Petersburg, 194021, Russian Federation}
+& \parbox{\spacewidth}{\centering \spacechar\\\spacechar\\\spacechar\\\spacechar\\\spacechar} &
+\parbox{\rcollength}{
+\textit{Mobile:} +79218459027 \\
+\textit{E-mail:} \\ \email{dima.delmar@gmail.com}}
+\end{tabular}
+
+\section{Work Interests}
+\textbf{Java/.NET development. Interested in development of high-performance multi-module systems and big data}
+
+\section{Keywords}
+    Java SE, Java EE, C\#, .NET Framework, C++, Concurrency Framework, Spring Framework, ActiveMQ, JMX, JMS, PostgreSQL, Riak, Apache Maven, Apache Hadoop, MPI, MongoDB
+
+\halfblankline
+\vspace{0.1in}
+
+\section{Education}
+
+\href{http://www.spbstu-eng.ru/}{\textbf{Saint-Petersburg State Polytechnical University}},
+Saint-Petersburg, RF
+\begin{outerlist}
+
+\item[] Ph.D.,
+        \href{http://www.ioffe.ru/index_en.html}
+             {Fluid, Gas and Plasma mechanics}, July 2016
+        \begin{innerlist}
+        \item Thesis Topic: \emph{Numerical simulation of heat transfer through spacecraft surface for a weakly ionised hypersonic flow}
+        \item Adviser: {Senior Scientist Poniaev S.A.}
+        \item Area of Study: Aerospace, Aerodynamics, Plasma physics
+        \end{innerlist}
+\item[] M.S.,
+        \href{http://aero.spbstu.ru}
+             {Applied Mathematics and Physics}, July 2012
+        \begin{innerlist}
+        \item Thesis Topic: \emph{Numerical simulation of an air flow inside a cyclone filter and implementation of a Shur-Spalart curvature-correction term for $k-\omega$ SST turbulence model}
+        \item Adviser: {Senior Scientist Poniaev S.A.}
+        \item Area of Study: Aerodynamics
+        \end{innerlist}
+
+\item[] B.S.,
+        \href{http://aero.spbstu.ru}
+             {Applied Mathematics and physics}, July 2010
+        \begin{innerlist}
+        \item Thesis Topic: \emph{Numerical simulation of supersonic flows}
+        \item Adviser: {Docent Bulovich S.V.}
+        \item Area of Study: Aerodynamics
+        \end{innerlist}
+
+\end{outerlist}
+
+\section{Refereed Journal Publications}
+
+\begin{bibenum}
+    \item Bogdanov D.A., Bulovich S.V. Numerical simulation of hypersonic flow over forward-facing step. \emph{International conference of XXXIX science-week SPBSTU materials}. Pages: 20--22. 2010.
+    \href{http://nru.spbstu.ru/scientific_events/week_of_science/week_of_science-2010/physical_sciences/}{Link}
+\end{bibenum}
+\vspace{0.1in}
+\section{Professional Experience}
+\halfblankline
+\href{http://www.speechpro.com}{\textbf{Speech Technology Center}},
+Saint-Petersburg, RF
+\begin{outerlist}
+
+    \item[] \textit{Software Developer}%
+            \hfill \textbf{July 2013 to present}
+            \begin{itemize}
+               \item Developing backend components for speech recognition systems (Java, C\#, Concurrency, JNI, JMX, JMS, ActiveMQ, Spring, MVC, Maven, Ant, PostgreSQL, Riak, Tomcat, Mercurial, Subversion, Intellij IDEA, Visual Studio, ReSharper, TeamCity, CentOS)
+            \end{itemize}
+
+\end{outerlist}
+\vspace{0.1in}
+\halfblankline
+\href{http://www.ggasoftware.com}{\textbf{GGA Software}},
+Saint-Petersburg, RF
+\begin{outerlist}
+
+    \item[] \textit{Software Developer}%
+            \hfill \textbf{February 2012 to July 2013}
+            \begin{itemize}
+               \item Developing \href{http://www.bibliorossica.com}{\textbf{Bibliorossica}} (Java, Concurrency, Spring, ImageIO, C++, PDF parsing, SAX, PostgreSQL, JSP, Javascript, jQuery, Git, Intellij IDEA, Eclipse)
+               \item Developing \href{http://www.iamscientist.com}{\textbf{I'mScientist}} (Ruby on Rails, PostgreSQL, MongoDB, Javascript, jQuery, Git)
+            \end{itemize}
+
+\end{outerlist}
+\vspace{0.2in}
+\href{http://www.corning.com}{\textbf{Corning Inc.}},
+Saint-Petersburg, RF
+\begin{outerlist}
+
+    \item[] \textit{Engineer}%
+            \hfill \textbf{September 2010 to January 2012}
+            \begin{itemize}
+                    \item C++11 development (Implementation of CFD solvers for chemically-reacting gas flow in porous media using \href{http://www.openfoam.com}{OpenFOAM})
+                    \item Designing catalytic convertors and diesel particle filters
+                    \item Numerical simulation in ANSYS Fluent and ANSYS CFX
+            \end{itemize}
+
+\end{outerlist}
+\vspace{0.1in}
+\halfblankline
+\href{http://www.twellgroup.ru/?eng}{\textbf{TWELL Company}},
+Saint-Petersburg, RF
+\begin{outerlist}
+
+    \item[] \textit{Engineer}%
+            \hfill \textbf{September 2009 to December 2010}
+            \begin{itemize}
+                    \item Theoretical research and numerical simulation of pneumatic breakwaters and interaction between sea waves and bubble plumes
+                    \item Development of a physical model applicable for pneumatic breakwaters
+            \end{itemize}
+
+\end{outerlist}
+\section{Application Areas}
+
+\textbf{Software Development:} Java, C\#, C++ (OpenFOAM), Ruby on Rails
+
+\textbf{Applied Mathematics and Physics:} Aerodynamics, Plasma physics, Structural Analysis
+
+\section{Professional Skills}
+%
+\begin{innerlist}
+    \item \textbf{Programming Languages}: Java, C\#, Ruby, C++, Javascript
+    \item \textbf{Frameworks, libraries and tools}: Java Concurrency, JMS, NMS, ActiveMQ, JMX, Batis, Spring, Spring MVC, Maven, Nuget, Ant, JUnit, NUnit, Quartz
+    \item \textbf{DB}: PostgreSQL, Riak
+    \item \textbf{IDE}: In love with Intellij IDEA but also familiar with Visual Studio with ReSharper and several editors such as Vim, TextMate and Sublime Text
+    \item \textbf{VCS}: Git, Mercurial, Subversion
+    \item \textbf{CFD}: SU2, OpenFOAM, ANSYS CFX, ANSYS Fluent, ANSYS Workbench, ANSYS Mechanical, ICEM, Gambit, Salome, CHEMKIN
+\end{innerlist}
+\end{document}
