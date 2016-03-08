@@ -2,10 +2,9 @@
 \usepackage{calc}
 \reversemarginpar
 \usepackage[paper=letterpaper,
-            %includefoot, % Uncomment to put page number above margin
-            marginparwidth=1.2in,     % Length of section titles
-            marginparsep=.05in,       % Space between titles and text
-            margin=1in,               % 1 inch margins
+            marginparwidth=1.2in,
+            marginparsep=.05in,
+            margin=1in,
             includemp]{geometry}
 \setlength{\parindent}{0in}
 \usepackage[shortlabels]{enumitem}
@@ -15,12 +14,12 @@
 \newlength{\bibsep}
  {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
 \newlist{bibsection}{itemize}{3}
-\setlist[bibsection]{label=,leftmargin=\bibhang,%
+\setlist[bibsection]{label=,leftmargin=\bibhang,
         itemindent=-\bibhang,
         itemsep=\bibsep,parsep=\z@,partopsep=0pt,
         topsep=0pt}
 \newlist{bibenum}{enumerate}{3}
-\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},%
+\setlist[bibenum]{label=[\arabic*],resume,leftmargin={\bibhang+\widthof{[999]}},
         itemindent=-\bibhang,
         itemsep=\bibsep,parsep=\z@,partopsep=0pt,
         topsep=0pt}
@@ -30,46 +29,44 @@
 \def\endbibsection{\oldendbibsection\vspace{-.6\baselineskip}}
 \makeatother
 \usepackage{fancyhdr,lastpage}
-%\pagestyle{fancy}
-\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\pagestyle{fancy}
+%\pagestyle{empty}
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfootoffset{\marginparsep+\marginparwidth}
 \newlength{\footpageshift}
 \setlength{\footpageshift}
           {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
-\lfoot{\hspace{\footpageshift}%
-       \parbox{4in}{\, \hfill %
-                    \arabic{page} of \protect\pageref*{LastPage} % +LP
-%                    \arabic{page}                               % -LP
+\lfoot{\hspace{\footpageshift}
+       \parbox{4in}{\, \hfill
+                    \arabic{page} of \protect\pageref*{LastPage} 
                     \hfill \,}}
 
-% Finally, give us PDF bookmarks
 \usepackage{color,hyperref}
 \definecolor{darkblue}{rgb}{0.0,0.0,0.3}
 \hypersetup{colorlinks,breaklinks,
             linkcolor=darkblue,urlcolor=darkblue,
             anchorcolor=darkblue,citecolor=darkblue}
-\newcommand{\makeheading}[2][]%
-        {\hspace*{-\marginparsep minus \marginparwidth}%
-         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
-             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]%
-                 \rule{\columnwidth}{1pt}%
+\newcommand{\makeheading}[2][]
+        {\hspace*{-\marginparsep minus \marginparwidth}
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}
+             {\large \bfseries #2 \hfill #1}\\[-0.15\baselineskip]
+                 \rule{\columnwidth}{1pt}
          \end{minipage}}
-\renewcommand{\section}[1]{\pagebreak[3]%
-    \vspace{1.3\baselineskip}%
-    \phantomsection\addcontentsline{toc}{section}{#1}%
-    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}%
+\renewcommand{\section}[1]{\pagebreak[3]
+    \vspace{1.3\baselineskip}
+    \phantomsection\addcontentsline{toc}{section}{#1}
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\hyphenpenalty=10000\raggedright #1}}}
     \vspace{-\baselineskip}\par}
-\newcommand*\fixendlist[1]{%
+\newcommand*\fixendlist[1]{
     \expandafter\let\csname preFixEndListend#1\expandafter\endcsname\csname end#1\endcsname
     \expandafter\def\csname end#1\endcsname{\csname preFixEndListend#1\endcsname\vspace{-0.6\baselineskip}}}
 \let\originalItem\item
-\newcommand*\fixouterlist[1]{%
+\newcommand*\fixouterlist[1]{
     \expandafter\let\csname preFixOuterList#1\expandafter\endcsname\csname #1\endcsname
     \expandafter\def\csname #1\endcsname{\csname preFixOuterList#1\endcsname\let\oldItem\item\def\item{\pagebreak[2]\oldItem}}
     \expandafter\let\csname preFixOuterListend#1\expandafter\endcsname\csname end#1\endcsname
     \expandafter\def\csname end#1\endcsname{\let\item\oldItem\csname preFixOuterListend#1\endcsname}}
-\newcommand*\fixinnerlist[1]{%
+\newcommand*\fixinnerlist[1]{
     \expandafter\let\csname preFixInnerList#1\expandafter\endcsname\csname #1\endcsname
     \expandafter\def\csname #1\endcsname{\let\oldItem\item\let\item\originalItem\csname preFixInnerList#1\endcsname}
     \expandafter\let\csname preFixInnerListend#1\expandafter\endcsname\csname end#1\endcsname
@@ -105,15 +102,15 @@
 
 \section{Contact Information}
 
-\newlength{\rcollength}\setlength{\rcollength}{2.55in}%
+\newlength{\rcollength}\setlength{\rcollength}{2.35in}
 \newlength{\spacewidth}\setlength{\spacewidth}{20pt}
 \newcommand\spacechar{$|$}
-\begin{tabular}[t]{@{}p{\textwidth-\rcollength-\spacewidth}@{}p{\spacewidth}@{}p{\rcollength}}%
-\parbox{\textwidth-\rcollength-\spacewidth}{%
-Senior Software Developer\\
-\href{http://www.speechpro.com}{Speech Technology Center}\\
-4 Krasutskogo street\\
-Saint-Petersburg, 196084, Russia}
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength-\spacewidth}@{}p{\spacewidth}@{}p{\rcollength}}
+\parbox{\textwidth-\rcollength-\spacewidth}{
+Staff Software Engineer\\
+\href{http://www.genesys.com}{Genesys Telecommunications Laboratories}\\
+88A Sredniy prospect\\
+Saint-Petersburg, 199106, Russia}
 & \parbox{\spacewidth}{\centering \spacechar\\\spacechar\\\spacechar\\\spacechar\\\spacechar} &
 \parbox{\rcollength}{
 \textit{Mobile:} +79218459027 \\
@@ -122,7 +119,7 @@ Saint-Petersburg, 196084, Russia}
 \end{tabular}
 
 \section{Job title}
-\textbf{Software developer}
+\textbf{Staff Software Engineer}
 
 \section{Keywords}
     Java 6,7,8, Design Patterns, Enterprise Integration Patterns, SOA, C\#, .NET Framework, C++, Concurrency Framework, Spring Framework, ActiveMQ, JMX, JMS, PostgreSQL, Riak, Maven
@@ -171,16 +168,28 @@ Saint-Petersburg, RF
     \item Bogdanov D.A., Ponyaev S.A. Numerical simulation of turbulent flow in a cyclonic separator. \emph{Journal of
     Physics, Conference Series, Vol. 572, 2014, 012056}
     \href{http://iopscience.iop.org/1742-6596/572/1/012056/}{Link}
+  \item Bogdanov D.A, Kuznetsov E.A., Ponyaev S.A. Effect of plasma non-equilibrium on heat fluxes in high-speed flow.
+    \emph {VIII International Conference of Plasma Physics and Plasma Technology, 2015}
+    \href{http://ifanbel.bas-net.by/pppt-8/}{Link}
 \end{bibenum}
 \vspace{0.1in}
 \section{Professional Experience}
 \halfblankline
-\href{http://www.speechpro.com}{\textbf{Speech Technology Center}},
-Saint-Petersburg, RF
+\href{http://www.genesys.com}{\textbf{Genesys Telecommunications Laboratories}}, Saint-Petersburg, RF
 \begin{outerlist}
-
-    \item[] \textit{Software Developer}%
-            \hfill \textbf{July 2013 to present}
+\item[] \textit{Staff Sowtware Engineer}
+  \hfill \textbf{March 2016 to present}
+  \begin{itemize}
+    \item Development of server components for Genesys Web Engagement project. (SOA, Spring, Concurrency, Maven, Intellij IDEA)
+    \end{itemize}
+  \end{outerlist}
+  \vspace{0.2in}
+\newpage
+\halfblankline
+\href{http://www.speechpro.com}{\textbf{Speech Technology Center}}, Saint-Petersburg, RF
+\begin{outerlist}
+    \item[] \textit{Senior Software Developer}
+            \hfill \textbf{July 2013 to February 2016}
             \begin{itemize}
                \item Currently responsible for server components of highload system for speech recognition, sound processing and tracking. (SOA,
                Spring, .NET, Concurrency, JNI, JMX, JMS, ActiveMQ, Maven, Ant, PostgreSQL, Riak, Tomcat, Mercurial, Subversion, Intellij IDEA, Visual Studio, ReSharper, TeamCity, CentOS)
@@ -188,11 +197,9 @@ Saint-Petersburg, RF
 \end{outerlist}
 \vspace{0.2in}
 \halfblankline
-\newpage
-\href{http://www.ggasoftware.com}{\textbf{GGA Software}},
-Saint-Petersburg, RF
+\href{http://www.ggasoftware.com}{\textbf{GGA Software}}, Saint-Petersburg, RF
 \begin{outerlist}
-    \item[] \textit{Software Developer}%
+    \item[] \textit{Software Developer}
             \hfill \textbf{February 2012 to July 2013}
             \begin{itemize}
                \item Architecture and implementation of workflow processing and visualization system for 
@@ -208,11 +215,10 @@ Saint-Petersburg, RF
 
 \end{outerlist}
 \vspace{0.2in}
-\href{http://www.corning.com}{\textbf{Corning Inc.}},
-Saint-Petersburg, RF
+\halfblankline
+\href{http://www.corning.com}{\textbf{Corning Inc.}}, Saint-Petersburg, RF
 \begin{outerlist}
-
-    \item[] \textit{Engineer}%
+    \item[] \textit{Engineer}
             \hfill \textbf{September 2010 to January 2012}
             \begin{itemize}
                     \item C++11 development (Implementation of CFD solvers for chemically-reacting gas flow in porous media using \href{http://www.openfoam.com}{OpenFOAM})
@@ -227,7 +233,7 @@ Saint-Petersburg, RF
 Saint-Petersburg, RF
 \begin{outerlist}
 
-    \item[] \textit{Engineer}%
+    \item[] \textit{Engineer}
             \hfill \textbf{September 2009 to December 2010}
             \begin{itemize}
                     \item Theoretical research and numerical simulation of pneumatic breakwaters and interaction between sea waves and bubble plumes
@@ -237,17 +243,18 @@ Saint-Petersburg, RF
 \end{outerlist}
 \section{Application Areas}
 
-\textbf{Software Development:} Java, C\#, C++, Ruby on Rails, js
+\textbf{Software Development:} Java, C\#, C++, Ruby on Rails, JavaScript
 
-\textbf{Applied Mathematics and Physics:} Aerodynamics, Chemistry
+\textbf{Applied Mathematics and Physics:} Aerodynamics, Aerospace, Solid Mechanics
 
 \section{Professional Skills}
-%
+
 \begin{innerlist}
-    \item \textbf{Programming Languages}: Java, C\#, Ruby, C++, js
-    \item \textbf{Frameworks, libraries and tools}: Java Concurrency, Spring, JMS, ActiveMQ, JMX, Batis, Maven, Nuget, Ant, JUnit, Cucumber, NUnit, Ruby on Rails
-    \item \textbf{DBMS}: PostgreSQL, Riak
-    \item \textbf{IDE}: In love with Intellij IDEA but also familiar with Visual Studio with ReSharper and several editors such as Vim, TextMate and Sublime Text
+    \item \textbf{Programming Languages}: Java, C\#, Ruby, C++, JavaScript
+    \item \textbf{Frameworks, libraries and tools}: Java Concurrency, Spring, JMS, ActiveMQ, JMX, Batis, Hibernate, Maven, Nuget, Ant, JUnit, Cucumber, NUnit, Ruby on Rails
+    \item \textbf{RDBMS}: PostgreSQL, MySQL
+    \item \textbf{NoSQL}: Riak, MongoDB, Solr
+    \item \textbf{IDE}: In love with Intellij IDEA but also familiar with Visual Studio with ReSharper and several editors such as Vim, Sublime Text and TextMate
     \item \textbf{VCS}: Git, Mercurial, Subversion
     \item \textbf{CFD}: SU2, OpenFOAM, ANSYS CFX, ANSYS Fluent, ANSYS Workbench, ANSYS Mechanical, ICEM, Gambit, Salome, CHEMKIN
     \item \textbf{OS}: MacOS X, Windows, Linux - RedHat (CentOS), Ubuntu
