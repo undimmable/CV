@@ -98,40 +98,105 @@
 \providecommand\Matlab{\textsc{Matlab}}
 \hyphenation{bio-mim-ic-ry bio-in-spi-ra-tion re-us-a-ble pro-vid-er}
 \begin{document}
-\makeheading{Dmitry Bogdanov\\}
+\newlength{\rcollength}\setlength{\rcollength}{3.35in}
+\makeheading{
+  \begin{tabular}[t]{@{}p{\textwidth-\rcollength}@{}p{\rcollength}}
+    \parbox{\textwidth-\rcollength}{
+      Dmitry Bogdanov
+    }
+    \parbox{\rcollength}{
+      Staff Software Engineer at \href{http://www.genesys.com}{Genesys}
+    }
+  \end{tabular}\\
+}
 
 \section{Contact Information}
++79218459027 \\
+\email{dimyriy.bogdanov@gmail.com} \\
+\href{https://www.github.com/dimyriy}{https://github.com/dimiriy}
 
-\newlength{\rcollength}\setlength{\rcollength}{2.35in}
-\newlength{\spacewidth}\setlength{\spacewidth}{20pt}
-\newcommand\spacechar{$|$}
-\begin{tabular}[t]{@{}p{\textwidth-\rcollength-\spacewidth}@{}p{\spacewidth}@{}p{\rcollength}}
-\parbox{\textwidth-\rcollength-\spacewidth}{
-Staff Software Engineer\\
-\href{http://www.genesys.com}{Genesys Telecommunications Laboratories}\\
-88A Sredniy prospect\\
-Saint-Petersburg, 199106, Russia}
-& \parbox{\spacewidth}{\centering \spacechar\\\spacechar\\\spacechar\\\spacechar\\\spacechar} &
-\parbox{\rcollength}{
-\textit{Mobile:} +79218459027 \\
-\textit{E-mail:} \email{dimyriy.bogdanov@gmail.com} \\
-\textit{GitHub:} \href{https://www.github.com/dimyriy}{https://github.com/dimiriy}}
-\end{tabular}
-
-\section{Job title}
-\textbf{Staff Software Engineer}
-
-\section{Keywords}
-    Java, C\#, Concurrency, Spring, ActiveMQ, PostgreSQL, Maven
+\section{Professional Experience}
+\vspace{0.2in}
 \halfblankline
+\href{http://www.genesys.com}{\textbf{Genesys Telecommunications Laboratories}}, Saint-Petersburg, RF
+\begin{outerlist}
+\item[] \textit{Staff Software Engineer}
+  \hfill \textbf{March 2016 to present}
+  \begin{itemize}
+    \item Development of server components for Genesys Web Engagement project. (Spring, JAX-RS – Jersey, Concurrency, Maven, Docker, Jenkins)
+    \end{itemize}
+  \end{outerlist}
+\vspace{0.2in}
+\halfblankline
+\href{http://www.speechpro.com}{\textbf{Speech Technology Center}}, Saint-Petersburg, RF
+\begin{outerlist}
+    \item[] \textit{Senior Software Developer}
+            \hfill \textbf{July 2013 to February 2016}
+            \begin{itemize}
+               \item Development of highload system for speech recognition, sound processing and tracking. (SOA, Spring, .NET, Concurrency, JNI, JMX, JMS, ActiveMQ, Maven, Ant, PostgreSQL, Riak, Tomcat, Mercurial, Subversion, Intellij IDEA, Visual Studio, ReSharper, TeamCity, CentOS)
+            \end{itemize}
+\end{outerlist}
+\vspace{0.2in}
+\halfblankline
+\href{http://www.ggasoftware.com}{\textbf{GGA Software}}, Saint-Petersburg, RF
+\begin{outerlist}
+    \item[] \textit{Software Developer}
+            \hfill \textbf{February 2012 to July 2013}
+            \begin{itemize}
+               \item Architecture and implementation of workflow processing and visualization system for 
+               \href{http://www.biodatomics.com/}{\textbf{Biodatomics}} project. (Java, Ruby on Rails, Concurrency,
+               PostreSQL, Apache Hadoop, Javascript, jQuery, Backbone.js, Git, Intellij IDEA and RubyMine)
+               \item PDF parser for highly accurate content-recognition and building HTML-representation
+               of parsed PDF on desktop and mobile platforms for
+               \href{http://www.bibliorossica.com}{\textbf{Bibliorossica}} project. (JavaSE, Tomcat, Hibernate,
+               Concurrency, Spring, Spring-MVC, Spring integration, ImageIO, C++, PDF parsing, PostgreSQL, JSP, Javascript, jQuery, Git, Intellij IDEA, Eclipse)
+               \item Web-development \href{http://www.iamscientist.com}{\textbf{I'mScientist}} (REST, Ruby on Rails,
+               PostgreSQL, MongoDB, Solr, Javascript, jQuery, Git, Vim and Sublime Text)
+            \end{itemize}
+
+\end{outerlist}
+\halfblankline
+\href{http://www.corning.com}{\textbf{Corning Inc.}}, Saint-Petersburg, RF
+\begin{outerlist}
+    \item[] \textit{Engineer}
+            \hfill \textbf{September 2010 to January 2012}
+            \begin{itemize}
+                    \item C++11 development (Implementation of CFD solvers for chemically-reacting gas flow in porous media using \href{http://www.openfoam.com}{OpenFOAM})
+                    \item Designing catalytic convertors and diesel particle filters
+                    \item Numerical simulation in ANSYS Fluent and ANSYS CFX
+            \end{itemize}
+
+\end{outerlist}
 \vspace{0.1in}
-
-\section{Education}
-
-\href{http://www.spbstu-eng.ru/}{\textbf{Saint-Petersburg State Polytechnical University}},
+\halfblankline
+\href{http://www.twellgroup.ru/?eng}{\textbf{TWELL Company}},
 Saint-Petersburg, RF
 \begin{outerlist}
 
+    \item[] \textit{Engineer}
+            \hfill \textbf{September 2009 to December 2010}
+            \begin{itemize}
+                    \item Theoretical research and numerical simulation of pneumatic breakwaters and interaction between sea waves and bubble plumes
+                    \item Development of a physical model applicable for pneumatic breakwaters
+            \end{itemize}
+
+\end{outerlist}
+
+\section{Professional Skills}
+\begin{innerlist}
+    \item \textbf{Programming Languages}: Java, C\#, Ruby, C++, JavaScript
+    \item \textbf{Frameworks, libraries and tools}: Spring, JMS, ActiveMQ, JMX, Batis, Maven, Nuget, Ant, JUnit, Ruby on Rails
+    \item \textbf{RDBMS}: PostgreSQL, MySQL
+    \item \textbf{NoSQL}: Riak, Cassandra, Solr
+    \item \textbf{IDE}: In love with Intellij IDEA but also familiar with Visual Studio with ReSharper and several editors such as Vim and Sublime Text
+    \item \textbf{VCS}: Git, Mercurial, Subversion
+    \item \textbf{OS}: MacOS X, Windows, Linux - RedHat (CentOS), Ubuntu
+\end{innerlist}
+
+\section{Education}
+\href{http://www.spbstu-eng.ru/}{\textbf{Saint-Petersburg State Polytechnical University}},
+Saint-Petersburg, RF
+\begin{outerlist}
 \item[] Ph.D.,
         \href{http://www.ioffe.ru/index_en.html}
              {Fluid, Gas and Plasma mechanics}
@@ -161,7 +226,6 @@ Saint-Petersburg, RF
 \end{outerlist}
 
 \section{Refereed Journal Publications}
-
 \begin{bibenum}
     \item Bogdanov D.A., Bulovich S.V. Numerical simulation of hypersonic flow over forward-facing step. \emph{International conference of XXXIX science-week SPBSTU materials}. Pages: 20--22. 2010.
     \href{http://nru.spbstu.ru/scientific_events/week_of_science/week_of_science-2010/physical_sciences/}{Link}
@@ -173,90 +237,4 @@ Saint-Petersburg, RF
     \href{http://ifanbel.bas-net.by/pppt-8/}{Link}
 \end{bibenum}
 \vspace{0.1in}
-\section{Professional Experience}
-\halfblankline
-\href{http://www.genesys.com}{\textbf{Genesys Telecommunications Laboratories}}, Saint-Petersburg, RF
-\begin{outerlist}
-\item[] \textit{Staff Software Engineer}
-  \hfill \textbf{March 2016 to present}
-  \begin{itemize}
-    \item Development of server components for Genesys Web Engagement project. (Spring, JAX-RS – Jersey, Concurrency, Maven, Docker, Jenkins)
-    \end{itemize}
-  \end{outerlist}
-  \vspace{0.2in}
-\newpage
-\halfblankline
-\href{http://www.speechpro.com}{\textbf{Speech Technology Center}}, Saint-Petersburg, RF
-\begin{outerlist}
-    \item[] \textit{Senior Software Developer}
-            \hfill \textbf{July 2013 to February 2016}
-            \begin{itemize}
-               \item Currently responsible for server components of highload system for speech recognition, sound processing and tracking. (SOA,
-               Spring, .NET, Concurrency, JNI, JMX, JMS, ActiveMQ, Maven, Ant, PostgreSQL, Riak, Tomcat, Mercurial, Subversion, Intellij IDEA, Visual Studio, ReSharper, TeamCity, CentOS)
-            \end{itemize}
-\end{outerlist}
-\vspace{0.2in}
-\halfblankline
-\href{http://www.ggasoftware.com}{\textbf{GGA Software}}, Saint-Petersburg, RF
-\begin{outerlist}
-    \item[] \textit{Software Developer}
-            \hfill \textbf{February 2012 to July 2013}
-            \begin{itemize}
-               \item Architecture and implementation of workflow processing and visualization system for 
-               \href{http://www.biodatomics.com/}{\textbf{Biodatomics}} project. (Java, Ruby on Rails, Concurrency,
-               PostreSQL, Apache Hadoop, Javascript, jQuery, Backbone.js, Git, Intellij IDEA and RubyMine)
-               \item PDF parser for highly accurate content-recognition and building HTML-representation
-               of parsed PDF on desktop and mobile platforms for
-               \href{http://www.bibliorossica.com}{\textbf{Bibliorossica}} project. (JavaSE, Tomcat, Hibernate,
-               Concurrency, Spring, Spring-MVC, Spring integration, ImageIO, C++, PDF parsing, PostgreSQL, JSP, Javascript, jQuery, Git, Intellij IDEA, Eclipse)
-               \item Web-development \href{http://www.iamscientist.com}{\textbf{I'mScientist}} (REST, Ruby on Rails,
-               PostgreSQL, MongoDB, Solr, Javascript, jQuery, Git, Vim and Sublime Text)
-            \end{itemize}
-
-\end{outerlist}
-\vspace{0.2in}
-\halfblankline
-\href{http://www.corning.com}{\textbf{Corning Inc.}}, Saint-Petersburg, RF
-\begin{outerlist}
-    \item[] \textit{Engineer}
-            \hfill \textbf{September 2010 to January 2012}
-            \begin{itemize}
-                    \item C++11 development (Implementation of CFD solvers for chemically-reacting gas flow in porous media using \href{http://www.openfoam.com}{OpenFOAM})
-                    \item Designing catalytic convertors and diesel particle filters
-                    \item Numerical simulation in ANSYS Fluent and ANSYS CFX
-            \end{itemize}
-
-\end{outerlist}
-\vspace{0.1in}
-\halfblankline
-\href{http://www.twellgroup.ru/?eng}{\textbf{TWELL Company}},
-Saint-Petersburg, RF
-\begin{outerlist}
-
-    \item[] \textit{Engineer}
-            \hfill \textbf{September 2009 to December 2010}
-            \begin{itemize}
-                    \item Theoretical research and numerical simulation of pneumatic breakwaters and interaction between sea waves and bubble plumes
-                    \item Development of a physical model applicable for pneumatic breakwaters
-            \end{itemize}
-
-\end{outerlist}
-\section{Application Areas}
-
-\textbf{Software Development:} Java, C\#, Ruby on Rails, JavaScript, C++
-
-\textbf{Applied Mathematics and Physics:} Aerodynamics, Aerospace, Solid Mechanics
-
-\section{Professional Skills}
-
-\begin{innerlist}
-    \item \textbf{Programming Languages}: Java, C\#, Ruby, C++, JavaScript
-    \item \textbf{Frameworks, libraries and tools}: Spring, JMS, ActiveMQ, JMX, Batis, Maven, Nuget, Ant, JUnit, Ruby on Rails
-    \item \textbf{RDBMS}: PostgreSQL, MySQL
-    \item \textbf{NoSQL}: Riak, Cassandra, Solr
-    \item \textbf{IDE}: In love with Intellij IDEA but also familiar with Visual Studio with ReSharper and several editors such as Vim and Sublime Text
-    \item \textbf{VCS}: Git, Mercurial, Subversion
-    \item \textbf{CFD}: SU2, OpenFOAM, ANSYS CFX, ANSYS Fluent, ANSYS Workbench, ANSYS Mechanical, ICEM, Gambit, Salome, CHEMKIN
-    \item \textbf{OS}: MacOS X, Windows, Linux - RedHat (CentOS), Ubuntu
-\end{innerlist}
 \end{document}
