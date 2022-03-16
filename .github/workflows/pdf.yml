@@ -14,4 +14,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PDF Artifact
-          path: cv.pdf
+          path: cv.pdf => 
+          if-no-files-found: error
