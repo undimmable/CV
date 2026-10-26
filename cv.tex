@@ -1,4 +1,7 @@
 \documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{needspace}
 \usepackage{calc}
 \reversemarginpar
 \usepackage[paper=letterpaper,
@@ -106,7 +109,8 @@
     \parbox{\textwidth-\rcollength}{
       Dima Bogdanov\\
       \halfblankline
-      Staff Software Engineer
+      % TODO: location + relocation stance, e.g. "Berlin, Germany, open to relocation to Spain"
+      Staff Software Engineer --- backend and distributed systems
     }
     & \parbox{\rcollength}{
       \begin{flushright}
@@ -120,88 +124,115 @@
 
 \section{Skills}
 \begin{innerlist}
-    \item Team and project management
-    \item Cross-team communications
-    \item Backend Development (Java, Kotlin, TypeScript)
-    \item Cloud (AWS, Google Cloud)
-    \item Working effectively with legacy code :)
+    \item Software architecture, distributed systems, event-driven services
+    \item Technical leadership: engineering process, team setup, hiring, mentoring
+    \item Backend: C\#, .NET, TypeScript, NestJS; Java and Kotlin in earlier roles
+    \item Data: \mbox{PostgreSQL}, MySQL, \mbox{Elasticsearch}
+    \item Messaging: Kafka, Redis, RabbitMQ, ActiveMQ
+    \item Cloud and delivery: Amazon Web Services (AWS), Google Cloud, Azure, Docker, Kubernetes, GitLab CI/CD, Terraform
+    \item Observability: OpenTelemetry, Grafana/Kibana
+    \item Web: Angular, Three.js
 \end{innerlist}
-
+% TODO(metrics): team size, number of services, import volume and runtime, effect of deployment locks
 \section{Experience}
 \halfblankline
+\needspace{6\baselineskip}
+\textbf{Geomix}
+\begin{outerlist}
+    \item[] \textit{Technical Lead / Software Architect}
+      \hfill \textbf{October 2025 to Present}
+      \begin{itemize}
+        \item Lead architectural design and hands-on delivery for a geospatial mining platform spanning .NET services, a NestJS BFF and Angular/Three.js applications; author C4 models and ADRs defining service boundaries and integration contracts.
+        \item Design and build backend services for distributed workflow orchestration and fragmentation forecasting, with durable process state, Kafka event delivery and recovery after partial failures, plus S3-compatible multipart uploads.
+      \end{itemize}
+\end{outerlist}
+\vspace{0.2in}
+\halfblankline
+\textbf{Career Break / Sabbatical}
+\hfill \textbf{April 2024 to September 2025}
+% TODO: one line on what you did, or delete the block -- the dates already line up
+\par
+\vspace{0.2in}
+\halfblankline
+\needspace{6\baselineskip}
 \href{https://bolt.eu}{\textbf{Bolt}}, Berlin, Germany
 \begin{outerlist}
     \item[] \textit{Feature Lead}
       \hfill \textbf{June 2022 to March 2024}
       \begin{itemize}
-        \item Leading feature development for the bolt rides (TypeScript, MySQL, TiDB, Kafka, Redis, ActiveMQ)
-        \item Improving processes and communications with other teams
-        \item Building the product roadmap
-        \item Mentoring teammates
+        \item Led feature development for Bolt Rides end to end, from design through rollout (TypeScript, MySQL/TiDB, Kafka, Redis, ActiveMQ).
+        \item Owned the roadmap for the features I led, coordinated delivery with adjacent teams and mentored teammates.
       \end{itemize}
 \end{outerlist}
+% TODO(metrics): traffic or data volume of the surfaces you owned, team size, number of features shipped
 \vspace{0.2in}
 \halfblankline
+\needspace{6\baselineskip}
 \href{https://app.wonder.me}{\textbf{Wonder}}, Berlin, Germany
 \begin{outerlist}
     \item[] \textit{Staff Software Engineer, Product Owner}
       \hfill \textbf{February 2022 to April 2022}
       \begin{itemize}
-        \item Led the project of integrating Wonder with our partners
-        \item Communicated with our partners to understand their needs and build the product roadmap together
-        \item Designed and developed the API for integrations project (Kotlin, Java, TypeScript, AWS, Terraform)
+        \item Led Wonder's partner integrations end to end, from gathering partner requirements to shipping the integration API (Kotlin, Java, TypeScript, AWS, Terraform).
+        \item Built the integration roadmap together with the partners.
         \end{itemize}
       \end{outerlist}
-\vspace{0.2in}
+\vspace{0.1in}
 \halfblankline
-\
+\needspace{6\baselineskip}
 \href{https://jetbrains.com}{\textbf{JetBrains}}, Munich/Berlin, Germany
 \begin{outerlist}
     \item[] \textit{Team Lead, Senior Software Engineer}
       \hfill \textbf{March 2019 to January 2022}
       \begin{itemize}
         \item Developed the TeamCity cloud integrations (Java, AWS, Google Cloud, Azure, Spring, RDBMS, RabbitMQ)
-        \item Created from scratch and led our Cloud Integrations Team. Mentored teammates – introduced one on ones and the personal development plans
-        \item Was responsible for building the product roadmap
-        \item Interviewed candidates, also initiated improvements in the hiring process
+        \item Built the Cloud Integrations team from scratch and led it; mentored teammates through one-on-ones and personal development plans
+        \item Owned the product roadmap
+        \item Interviewed candidates and drove improvements to the hiring process
         \end{itemize}
       \end{outerlist}
-\vspace{0.2in}
-\
+\vspace{0.1in}
 \halfblankline
+\needspace{6\baselineskip}
 \href{https://www.check24.de}{\textbf{CHECK24}}, Munich, Germany
 \begin{outerlist}
     \item[] \textit{Senior Software Engineer}
       \hfill \textbf{November 2017 to February 2019}
       \begin{itemize}
-        \item Led the GDPR compliance project with a tribe of 5 teammates
-        \item Was responsible for interviewing the candidates
-        \item Designed and developed backend components for CHECK24 (Java, Spring, Postgres)
-        \item Managed cross-team communication and the communication with our partners, mentored teammates
+        \item Led the GDPR compliance project across a tribe of five
+        \item Interviewed candidates
+        \item Designed and developed CHECK24 backend components (Java, Spring, Postgre\-SQL)
+        \item Owned cross-team and partner communication; mentored teammates
         \end{itemize}
       \end{outerlist}
-\pagebreak
+\vspace{0.1in}
+\halfblankline
+\needspace{6\baselineskip}
 \href{http://www.genesys.com}{\textbf{Genesys}}, Saint-Petersburg
 \begin{outerlist}
     \item[] \textit{Staff Software Engineer}
       \hfill \textbf{March 2016 to October 2017}
       \begin{itemize}
-        \item Designed and developed backend for Genesys Web Engagement project (Java, OracleDB, A lot of legacy integrations)
+        \item Designed and developed the backend for the Genesys Web Engagement project (Java, Oracle DB, many legacy system integrations)
         \item Led the product integrations project
-        \item Managed cross-team communication
+        \item Owned cross-team communication
         \end{itemize}
       \end{outerlist}
+\vspace{0.1in}
+\halfblankline
+\needspace{6\baselineskip}
 \href{http://speechpro.com/}{\textbf{Speech Technology Center}}, Saint-Petersburg
 \begin{outerlist}
     \item[] \textit{Staff Software Engineer}
             \hfill \textbf{July 2013 to February 2016}
             \begin{itemize}
-               \item Designed and developed backend components for high-load speech recognition and audio analythics system (Java, C\#, Postgres, ActiveMQ)
-               \item Communicated with customers to cater the product to their needs
+               \item Designed and developed backend components for a high-load speech recognition and audio analytics system (Java, C\#, \mbox{PostgreSQL}, ActiveMQ)
+               \item Worked with customers to tailor the product to their needs
             \end{itemize}
 \end{outerlist}
 \vspace{0.2in}
 \halfblankline
+\needspace{6\baselineskip}
 \href{http://www.epam.com}{\textbf{EPAM}}, Saint-Petersburg
 \begin{outerlist}
     \item[] \textit{Software Engineer}
