@@ -10,7 +10,6 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: cv.tex
-          extra_packages: newtx needspace
       - name:
         uses: actions/upload-artifact@v4
         with:
